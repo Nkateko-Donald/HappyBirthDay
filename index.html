@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love!</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Cursor effect -->
+    <div class="cursor-effect" id="cursor-effect"></div>
+    
+    <!-- Falling hearts background -->
+    <div id="hearts-container"></div>
+    
+    <header>
+        <h1>Happy Birthday, <span id="her-name">My Love</span>! 🎂</h1>
+        <p>This page is dedicated to the most amazing person in my life</p>
+    </header>
+    
+    <main>
+        <section id="message">
+            <h2>To My Beautiful Girlfriend</h2>
+            <div class="love-note">
+                <p class="typewriter">On your special day, I want you to know how incredibly blessed I am to have you in my life.</p>
+                <p>Your smile lights up my world, your laughter is my favorite melody, and your love is the greatest gift I've ever received.</p>
+                <p>Thank you for being you - kind, beautiful, and wonderfully unique. I look forward to celebrating many more birthdays with you!</p>
+                <p>With all my love,</p>
+                <p>[Your Name]</p>
+            </div>
+            <button class="interactive-btn" id="love-btn">Send Love 💖</button>
+        </section>
+        
+        <section id="gallery">
+            <h2>Our Beautiful Memories</h2>
+            <div class="gallery" id="interactive-gallery">
+                <div class="gallery-item">
+                    <img src="images/photo1.jpg" alt="Our memory 1" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo2.jpg" alt="Our memory 2" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo3.jpg" alt="Our memory 3" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo4.jpg" alt="Our memory 4" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo5.jpg" alt="Our memory 5" onerror="handleImageError(this)">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo6.jpg" alt="Our memory 6" onerror="handleImageError(this)">
+                </div>
+            </div>
+        </section>
+        
+        <section class="video-section">
+            <h2>Video Messages</h2>
+            <h3 class="video-title">A Special Message From Me</h3>
+            <div class="video-container">
+                <video controls poster="images/video-poster1.jpg">
+                    <source src="videos/message.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <h3 class="video-title">Messages From Friends & Family</h3>
+            <div class="video-container">
+                <video controls poster="images/video-poster2.jpg">
+                    <source src="videos/friends-messages.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        
+        <section id="quiz">
+            <h2>How Well Do You Know Me?</h2>
+            <div class="quiz-container">
+                <div class="quiz-question">What's my favorite color?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="false">Blue</div>
+                    <div class="quiz-option" data-correct="true">Red</div>
+                    <div class="quiz-option" data-correct="false">Green</div>
+                    <div class="quiz-option" data-correct="false">Yellow</div>
+                </div>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-question">Where did we first meet?</div>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="true">Coffee shop</div>
+                    <div class="quiz-option" data-correct="false">University</div>
+                    <div class="quiz-option" data-correct="false">Park</div>
+                    <div class="quiz-option" data-correct="false">Concert</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="decoder">
+            <h2>Secret Message Decoder</h2>
+            <p>Decode this message: R3JlYXQgam9iIG9uIGZpZ3VyaW5nIHRoaXMgb3V0IQ==</p>
+            <div class="decoder-container">
+                <input type="text" class="decoder-input" placeholder="Enter decoded message">
+                <button class="interactive-btn" id="decode-btn">Decode</button>
+                <div class="decoder-message" id="decoder-message">
+                    Great job on figuring this out! You're amazing! 💖
+                </div>
+            </div>
+        </section>
+        
+        <section id="gift-section">
+            <h2>Your Virtual Gift</h2>
+            <div class="gift-box" id="gift-box">
+                <div class="lid"></div>
+                <div class="box"></div>
+            </div>
+            <div class="gift-message" id="gift-message">
+                You're the best thing that ever happened to me! Happy Birthday! 🎁
+            </div>
+        </section>
+        
+        <section id="future-dreams">
+            <h2>Our Future Dreams</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Next Year</h3>
+                        <p>Travel to Paris together</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>In 2 Years</h3>
+                        <p>Move in together</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>In 5 Years</h3>
+                        <p>Start a family</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Made with ❤️ for <span id="footer-name">the most special person</span> in my life</p>
+    </footer>
+    
+    <!-- Music player -->
+    <div class="music-player">
+        <div class="music-info">Our Song</div>
+        <button class="music-btn" id="play-btn"><i class="fas fa-play"></i></button>
+        <button class="music-btn" id="next-btn"><i class="fas fa-forward"></i></button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script>
+        // Main page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Personalized name
+            const herName = "Sarah"; // Change to your girlfriend's name
+            document.getElementById('her-name').textContent = herName;
+            document.getElementById('footer-name').textContent = herName;
+            
+            // Create falling hearts animation
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.classList.add('heart');
+                
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                
+                document.getElementById('hearts-container').appendChild(heart);
+                
+                // Remove heart after animation completes
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000);
+            }
+            
+            // Generate hearts periodically
+            setInterval(createHeart, 300);
+            
+            // Interactive button
+            document.getElementById('love-btn').addEventListener('click', function() {
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(createHeart, i * 100);
+                }
+                
+                this.innerHTML = 'Love Sent! 💖';
+                this.style.background = 'linear-gradient(45deg, #4CAF50, #8BC34A)';
+                
+                setTimeout(() => {
+                    this.innerHTML = 'Send Love 💖';
+                    this.style.background = 'linear-gradient(45deg, #ff4d94, #ff8eb4)';
+                }, 2000);
+            });
+            
+            // Interactive gallery - rearrange on click
+            document.getElementById('interactive-gallery').addEventListener('click', function() {
+                const items = Array.from(this.children);
+                for (let i = items.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    this.appendChild(items[j]);
+                }
+            });
+            
+            // Quiz functionality
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const isCorrect = this.getAttribute('data-correct') === 'true';
+                    
+                    if (isCorrect) {
+                        this.classList.add('correct');
+                        createConfetti();
+                    } else {
+                        this.classList.add('incorrect');
+                    }
+                    
+                    // Disable all options after selection
+                    this.parentElement.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.style.pointerEvents = 'none';
+                    });
+                });
+            });
+            
+            // Decoder functionality
+            document.getElementById('decode-btn').addEventListener('click', function() {
+                const input = document.querySelector('.decoder-input').value;
+                const message = document.getElementById('decoder-message');
+                
+                if (input.toLowerCase() === "great job on figuring this out!") {
+                    message.style.display = 'block';
+                    createConfetti();
+                } else {
+                    alert("That's not quite right. Try again!");
+                }
+            });
+            
+            // Gift box functionality
+            document.getElementById('gift-box').addEventListener('click', function() {
+                this.classList.add('open');
+                document.getElementById('gift-message').style.opacity = 1;
+                createConfetti();
+            });
+            
+            // Cursor effect
+            document.addEventListener('mousemove', function(e) {
+                const cursor = document.getElementById('cursor-effect');
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + 'px';
+                
+                // Create trailing effect
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const trail = document.createElement('div');
+                        trail.classList.add('cursor-effect');
+                        trail.style.left = e.pageX + 'px';
+                        trail.style.top = e.pageY + 'px';
+                        trail.style.width = '10px';
+                        trail.style.height = '10px';
+                        trail.style.opacity = '0.5';
+                        trail.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                        document.body.appendChild(trail);
+                        
+                        // Remove trail after animation
+                        setTimeout(() => {
+                            trail.remove();
+                        }, 500);
+                    }, i * 100);
+                }
+            });
+            
+            // Music player functionality
+            const songs = [
+                {
+                    title: "Our Song",
+                    src: "music/song1.mp3"
+                },
+                {
+                    title: "Special Memory",
+                    src: "music/song2.mp3"
+                }
+            ];
+            
+            let currentSong = 0;
+            const audio = new Audio();
+            
+            document.getElementById('play-btn').addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.src = songs[currentSong].src;
+                    audio.play();
+                    this.innerHTML = '<i class="fas fa-pause"></i>';
+                    document.querySelector('.music-info').textContent = songs[currentSong].title;
+                } else {
+                    audio.pause();
+                    this.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+            
+            document.getElementById('next-btn').addEventListener('click', function() {
+                currentSong = (currentSong + 1) % songs.length;
+                audio.src = songs[currentSong].src;
+                audio.play();
+                document.getElementById('play-btn').innerHTML = '<i class="fas fa-pause"></i>';
+                document.querySelector('.music-info').textContent = songs[currentSong].title;
+            });
+            
+            // Image error handling
+            window.handleImageError = function(img) {
+                img.src = "https://images.unsplash.com/photo-1533158307587-828f0a76ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
+                img.alt = "Image not available";
+            }
+        });
+        
+        // Confetti function
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                    document.body.appendChild(confetti);
+                    
+                    // Remove confetti after animation completes
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 20);
+            }
+        }
+    </script>
+</body>
+</html>
