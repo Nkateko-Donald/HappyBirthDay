@@ -31,48 +31,115 @@
             <button class="interactive-btn" id="love-btn">Send Love 💖</button>
         </section>
         
-        <section id="gallery">
-            <h2>Our Beautiful Memories</h2>
-            <div class="gallery" id="interactive-gallery">
-                <div class="gallery-item">
-                    <img src="images/photo1.jpg" alt="Our memory 1" onerror="handleImageError(this)">
+<section id="photos">
+            <h2>Photo Gallery</h2>
+            <div class="media-gallery">
+                <!-- Photo items -->
+                <div class="media-item" data-type="image" data-src="https://images.unsplash.com/photo-1533158307587-828f0a76ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-caption="Our first vacation together">
+                    <img src="https://images.unsplash.com/photo-1533158307587-828f0a76ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Memory 1">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-image"></i>
+                        <span>Photo</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/photo2.jpg" alt="Our memory 2" onerror="handleImageError(this)">
+                
+                <div class="media-item" data-type="image" data-src="https://images.unsplash.com/photo-1529254479751-fbacb4c3b6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-caption="Celebrating our anniversary">
+                    <img src="https://images.unsplash.com/photo-1529254479751-fbacb4c3b6e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Memory 2">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-image"></i>
+                        <span>Photo</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/photo3.jpg" alt="Our memory 3" onerror="handleImageError(this)">
+                
+                <div class="media-item" data-type="image" data-src="https://images.unsplash.com/photo-1543080853-556086153871?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-caption="Weekend getaway">
+                    <img src="https://images.unsplash.com/photo-1543080853-556086153871?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Memory 3">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-image"></i>
+                        <span>Photo</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/photo4.jpg" alt="Our memory 4" onerror="handleImageError(this)">
+                
+                <div class="media-item" data-type="image" data-src="https://images.unsplash.com/photo-1519311726-5cced7397894?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-caption="Beach day">
+                    <img src="https://images.unsplash.com/photo-1519311726-5cced7397894?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Memory 4">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-image"></i>
+                        <span>Photo</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/photo5.jpg" alt="Our memory 5" onerror="handleImageError(this)">
+                
+                <div class="media-item" data-type="image" data-src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-caption="Mountain hiking">
+                    <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Memory 5">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-image"></i>
+                        <span>Photo</span>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="images/photo6.jpg" alt="Our memory 6" onerror="handleImageError(this)">
+                
+                <div class="media-item" data-type="image" data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" data-caption="City lights">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Memory 6">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-image"></i>
+                        <span>Photo</span>
+                    </div>
                 </div>
             </div>
         </section>
         
-        <section id="video-section">
-            <h2>Video Messages</h2>
-            <h3 class="video-title">A Special Message From Me</h3>
-            <div class="video-container">
-                <video controls poster="images/video-poster1.jpg">
-                    <source src="videos/message.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            
-            <h3 class="video-title">Messages From Friends & Family</h3>
-            <div class="video-container">
-                <video controls poster="images/video-poster2.jpg">
-                    <source src="videos/friends-messages.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <section id="videos">
+            <h2>Video Collection</h2>
+            <div class="media-gallery">
+                <!-- Video items -->
+                <div class="media-item" data-type="video" data-src="https://player.vimeo.com/video/370756449" data-caption="Our trip to the mountains">
+                    <img src="https://images.unsplash.com/photo-1551025391-56ff7a6c4a7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video 1">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </div>
+                
+                <div class="media-item" data-type="video" data-src="https://player.vimeo.com/video/338995381" data-caption="Beach vacation">
+                    <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video 2">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </div>
+                
+                <div class="media-item" data-type="video" data-src="https://player.vimeo.com/video/330373292" data-caption="City adventure">
+                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video 3">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </div>
+                
+                <div class="media-item" data-type="video" data-src="https://player.vimeo.com/video/320749185" data-caption="Anniversary dinner">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video 4">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </div>
+                
+                <div class="media-item" data-type="video" data-src="https://player.vimeo.com/video/300335526" data-caption="Weekend getaway">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video 5">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </div>
+                
+                <div class="media-item" data-type="video" data-src="https://player.vimeo.com/video/270146729" data-caption="Celebration party">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Video 6">
+                    <div class="media-type-indicator">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </div>
             </div>
         </section>
+        
+
         
         <section id="quiz">
             <h2>How Well Do You Know Me?</h2>
@@ -119,6 +186,48 @@
                 You're the best thing that ever happened to me! Happy Birthday! 🎁
             </div>
         </section>
+
+                <section id="memories">
+            <h2>Our Memories Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>First Meeting</h3>
+                        <p>The day we first met. I knew right then you were special.</p>
+                        <p class="timeline-date">June 12, 2020</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>First Date</h3>
+                        <p>Our amazing first date at that little café. I was so nervous!</p>
+                        <p class="timeline-date">July 3, 2020</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>First Vacation</h3>
+                        <p>Our trip to the mountains. Remember how we got lost hiking?</p>
+                        <p class="timeline-date">September 15, 2020</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Moving In Together</h3>
+                        <p>The day we got our first apartment together. So many boxes!</p>
+                        <p class="timeline-date">January 20, 2021</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Today</h3>
+                        <p>Celebrating you and another amazing year together!</p>
+                        <p class="timeline-date">October 20, 2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
         
         <section id="future-dreams">
             <h2>Our Future Dreams</h2>
@@ -155,6 +264,155 @@
         <button class="music-btn" id="play-btn"><i class="fas fa-play"></i></button>
         <button class="music-btn" id="next-btn"><i class="fas fa-forward"></i></button>
     </div>
+
+    <!-- Modal for media display -->
+    <div class="modal" id="mediaModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <div id="modalMedia"></div>
+            <div class="modal-nav">
+                <div class="modal-nav-btn" id="modalPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="modal-nav-btn" id="modalNext">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all media items
+            const mediaItems = document.querySelectorAll('.media-item');
+            const modal = document.getElementById('mediaModal');
+            const modalMedia = document.getElementById('modalMedia');
+            const modalCaption = document.getElementById('modalCaption');
+            const modalClose = document.getElementById('modalClose');
+            const modalPrev = document.getElementById('modalPrev');
+            const modalNext = document.getElementById('modalNext');
+            
+            let currentMediaIndex = 0;
+            let mediaArray = [];
+            
+            // Initialize media array and event listeners
+            mediaItems.forEach((item, index) => {
+                mediaArray.push(item);
+                
+                item.addEventListener('click', () => {
+                    currentMediaIndex = index;
+                    openModal();
+                });
+            });
+            
+            // Open modal function
+            function openModal() {
+                const mediaItem = mediaArray[currentMediaIndex];
+                const mediaType = mediaItem.getAttribute('data-type');
+                const mediaSrc = mediaItem.getAttribute('data-src');
+                const caption = mediaItem.getAttribute('data-caption');
+                
+                // Clear previous media
+                modalMedia.innerHTML = '';
+                
+                // Add appropriate media type
+                if (mediaType === 'image') {
+                    modalMedia.innerHTML = `<img src="${mediaSrc}" alt="Enlarged view">`;
+                } else if (mediaType === 'video') {
+                    modalMedia.innerHTML = `<iframe src="${mediaSrc}" width="800" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                }
+                
+                // Set caption
+                modalCaption.textContent = caption;
+                
+                // Show modal
+                modal.classList.add('active');
+                
+                // Prevent body scrolling
+                document.body.style.overflow = 'hidden';
+            }
+            
+            // Close modal function
+            function closeModal() {
+                modal.classList.remove('active');
+                
+                // Allow body scrolling
+                document.body.style.overflow = 'auto';
+                
+                // Pause any videos
+                const iframe = modalMedia.querySelector('iframe');
+                if (iframe) {
+                    const iframeSrc = iframe.src;
+                    iframe.src = iframeSrc; // This stops the video
+                }
+            }
+            
+            // Navigate to next media
+            function nextMedia() {
+                currentMediaIndex = (currentMediaIndex + 1) % mediaArray.length;
+                openModal();
+            }
+            
+            // Navigate to previous media
+            function prevMedia() {
+                currentMediaIndex = (currentMediaIndex - 1 + mediaArray.length) % mediaArray.length;
+                openModal();
+            }
+            
+            // Event listeners for modal controls
+            modalClose.addEventListener('click', closeModal);
+            modalNext.addEventListener('click', nextMedia);
+            modalPrev.addEventListener('click', prevMedia);
+            
+            // Close modal when clicking outside content
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (modal.classList.contains('active')) {
+                    if (e.key === 'Escape') {
+                        closeModal();
+                    } else if (e.key === 'ArrowRight') {
+                        nextMedia();
+                    } else if (e.key === 'ArrowLeft') {
+                        prevMedia();
+                    }
+                }
+            });
+            
+            // Swipe support for touch devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            modal.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            modal.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextMedia();
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevMedia();
+                }
+            }
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="js/countdown.js"></script>
