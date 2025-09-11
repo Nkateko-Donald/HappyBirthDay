@@ -92,47 +92,47 @@
                 <div class="media-gallery">
                     <!-- Video items -->
                     <div class="media-item" data-type="video" data-src="videos/19d589564bf54910bfaad73884797b66.mp4" data-caption="Our trip to the mountains">
-                        <img src="images/video-thumbnail-1.jpg" alt="Video 1" onerror="handleImageError(this)">
+                        <img src="videos/o-11.png" alt="Video 1" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-video"></i>
                             <span>Video</span>
                         </div>
                     </div>
                     
-                    <div class="media-item" data-type="video" data-src="videos/video2.mp4" data-caption="Beach vacation">
-                        <img src="images/video-thumbnail-2.jpg" alt="Video 2" onerror="handleImageError(this)">
+                    <div class="media-item" data-type="video" data-src="videos/f7bb17c8ef91477cb6c595b513da9567.mp4" data-caption="Beach vacation">
+                        <img src="videos/o-13.png" alt="Video 2" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-video"></i>
                             <span>Video</span>
                         </div>
                     </div>
                     
-                    <div class="media-item" data-type="video" data-src="videos/video3.mp4" data-caption="City adventure">
-                        <img src="images/video-thumbnail-3.jpg" alt="Video 3" onerror="handleImageError(this)">
+                    <div class="media-item" data-type="video" data-src="videos/VID_24100622_185454_753.mp4" data-caption="City adventure">
+                        <img src="videos/Screenshot_20250104_180553_com.huawei.himovie.overseas.jpg" alt="Video 3" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-video"></i>
                             <span>Video</span>
                         </div>
                     </div>
                     
-                    <div class="media-item" data-type="video" data-src="videos/video4.mp4" data-caption="Anniversary dinner">
-                        <img src="images/video-thumbnail-4.jpg" alt="Video 4" onerror="handleImageError(this)">
+                    <div class="media-item" data-type="video" data-src="videos/44a03bc526ff43ec912cc611812e259e.mp4" data-caption="Anniversary dinner">
+                        <img src="videos/o-12.png" alt="Video 4" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-video"></i>
                             <span>Video</span>
                         </div>
                     </div>
                     
-                    <div class="media-item" data-type="video" data-src="videos/video5.mp4" data-caption="Weekend getaway">
-                        <img src="images/video-thumbnail-5.jpg" alt="Video 5" onerror="handleImageError(this)">
+                    <div class="media-item" data-type="video" data-src="videos/VID-20241225-WA0011.mp4" data-caption="Weekend getaway">
+                        <img src="videos/o-14.png" alt="Video 5" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-video"></i>
                             <span>Video</span>
                         </div>
                     </div>
                     
-                    <div class="media-item" data-type="video" data-src="videos/video6.mp4" data-caption="Celebration party">
-                        <img src="images/video-thumbnail-6.jpg" alt="Video 6" onerror="handleImageError(this)">
+                    <div class="media-item" data-type="video" data-src="videos/VID_24110423_074329_853.mp4" data-caption="Celebration party">
+                        <img src="videos/Screenshot_20250104_180601_com.huawei.himovie.overseas.jpg" alt="Video 6" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-video"></i>
                             <span>Video</span>
@@ -264,7 +264,7 @@
         <button class="music-btn" id="play-btn"><i class="fas fa-play"></i></button>
         <button class="music-btn" id="next-btn"><i class="fas fa-forward"></i></button>
     </div>
-
+    
     <!-- Modal for media display -->
     <div class="modal" id="mediaModal">
         <div class="modal-content">
@@ -290,7 +290,7 @@
         // Main page functionality
         document.addEventListener('DOMContentLoaded', function() {
             // Personalized name
-            const herName = "Sarah"; // Change to your girlfriend's name
+            const herName = "Olwethu"; // Change to your girlfriend's name
             document.getElementById('her-name').textContent = herName;
             document.getElementById('footer-name').textContent = herName;
             
@@ -409,7 +409,7 @@
             const songs = [
                 {
                     title: "Our Song",
-                    src: "music/song1.mp3"
+                    src: "music/Spoonky.mp3"
                 },
                 {
                     title: "Special Memory",
@@ -467,8 +467,6 @@
         }
 
         // Modal functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get all media items
             const mediaItems = document.querySelectorAll('.media-item');
             const modal = document.getElementById('mediaModal');
             const modalMedia = document.getElementById('modalMedia');
@@ -478,12 +476,10 @@
             const modalNext = document.getElementById('modalNext');
             
             let currentMediaIndex = 0;
-            let mediaArray = [];
+            let mediaArray = Array.from(mediaItems);
             
             // Initialize media array and event listeners
             mediaItems.forEach((item, index) => {
-                mediaArray.push(item);
-                
                 item.addEventListener('click', () => {
                     currentMediaIndex = index;
                     openModal();
@@ -502,14 +498,9 @@
                 
                 // Add appropriate media type
                 if (mediaType === 'image') {
-                    modalMedia.innerHTML = `<img src="${mediaSrc}" alt="Enlarged view">`;
+                    modalMedia.innerHTML = `<img src="${mediaSrc}" alt="Enlarged view" style="max-width: 100%; max-height: 80vh;">`;
                 } else if (mediaType === 'video') {
-                    // Check if it's a local video or external
-                    if (mediaSrc.includes('vimeo') || mediaSrc.includes('youtube')) {
-                        modalMedia.innerHTML = `<iframe src="${mediaSrc}" width="800" height="450" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-                    } else {
-                        modalMedia.innerHTML = `<video controls autoplay><source src="${mediaSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
-                    }
+                    modalMedia.innerHTML = `<video controls autoplay style="max-width: 100%; max-height: 80vh;"><source src="${mediaSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
                 }
                 
                 // Set caption
@@ -517,9 +508,18 @@
                 
                 // Show modal
                 modal.classList.add('active');
+
+                 // NEW: Scroll to top of modal to ensure content is visible
+        modal.scrollTop = 0;
+        
+// Scroll to the middle of the page
+window.scrollTo({
+    top: (document.documentElement.scrollHeight / 2) - 500,
+    behavior: 'smooth' // optional for smooth scrolling
+});
                 
                 // Prevent body scrolling
-                document.body.style.overflow = 'hidden';
+                //document.body.style.overflow = 'hidden';
             }
             
             // Close modal function
@@ -534,13 +534,20 @@
                 if (video) {
                     video.pause();
                 }
-                
-                // Stop any iframes
-                const iframe = modalMedia.querySelector('iframe');
-                if (iframe) {
-                    const iframeSrc = iframe.src;
-                    iframe.src = iframeSrc; // This stops the video
+
+                // Scroll to the middle of the page
+                if(video){
+                    window.scrollTo({
+                    top: 1500,
+                    behavior: 'smooth' // optional for smooth scrolling
+                });
+                } else{
+                    window.scrollTo({
+                    top: 800,
+                    behavior: 'smooth' // optional for smooth scrolling
+                });
                 }
+                
             }
             
             // Navigate to next media
@@ -579,32 +586,6 @@
                     }
                 }
             });
-            
-            // Swipe support for touch devices
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            modal.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, false);
-            
-            modal.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, false);
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    nextMedia();
-                }
-                
-                if (touchEndX > touchStartX + swipeThreshold) {
-                    prevMedia();
-                }
-            }
-        });
     </script>
 </body>
 </html>
