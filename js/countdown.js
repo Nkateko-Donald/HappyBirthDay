@@ -34,10 +34,6 @@ function updateCountdown() {
     }
 }
 
-// Initial call and set interval
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
 // Confetti function
 function createConfetti() {
     for (let i = 0; i < 50; i++) {
@@ -56,3 +52,31 @@ function createConfetti() {
         }, i * 20);
     }
 }
+
+// Create floating hearts animation
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '💖';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDelay = Math.random() * 2 + 's';
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+
+// Initial call and set interval
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Create hearts periodically
+setInterval(createHeart, 2000);
+
+// Create initial hearts
+setTimeout(() => {
+    for (let i = 0; i < 3; i++) {
+        setTimeout(createHeart, i * 1000);
+    }
+}, 1000);
