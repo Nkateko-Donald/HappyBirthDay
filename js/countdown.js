@@ -10,7 +10,7 @@ function updateCountdown() {
     if (diff <= 0) {
         // Redirect to main page if we're on the countdown page
         if (document.body.classList.contains('countdown-page')) {
-            window.location.href = 'index.html';
+            window.location.href = 'main.html';
             return;
         }
         
