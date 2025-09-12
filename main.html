@@ -6,6 +6,108 @@
     <title>Happy Birthday My Love!</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <style>
+
+        
+        .typewriter-container {
+            background: #fff;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 1000px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .typewriter-container::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        
+        .typewriter-header {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #d4af37;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .typewriter-paper {
+            background: #fdf6e3;
+            border: 1px solid #e8d8c0;
+            border-radius: 5px;
+            padding: 25px;
+            min-height: 300px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .typewriter-paper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 0;
+            height: 100%;
+            background: repeating-linear-gradient(
+                transparent,
+                transparent 23px,
+                #e8d8c0 23px,
+                #e8d8c0 24px
+            );
+            pointer-events: none;
+            opacity: 0.3;
+        }
+        
+        .love-note {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            line-height: 24px;
+            color: #5a3a2b;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .typewriter-cursor {
+            display: inline-block;
+            background-color: #d4af37;
+            width: 8px;
+            height: 1.1rem;
+            margin-left: 4px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+
+        
+        .typewriter-line {
+            display: block;
+            margin-bottom: 12px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 20px;
+            color: #d4af37;
+        }
+    </style>
 </head>
 <body>
     <!-- Cursor effect -->
@@ -21,17 +123,17 @@
         </header>
         
         <main>
+            
             <section id="message">
-                <h2>To My Beautiful Girlfriend</h2>
-                <div class="love-note">
-                    <p class="typewriter">On your special day, I want you to know how incredibly blessed I am to have you in my life.</p>
-                    <p>Your smile lights up my world, your laughter is my favorite melody, and your love is the greatest gift I've ever received.</p>
-                    <p>Thank you for being you - kind, beautiful, and wonderfully unique. I look forward to celebrating many more birthdays with you!</p>
-                    <p>With all my love,</p>
-                    <p>[Your Name]</p>
+                
+                <h2 >To My Beautiful Girlfriend</h2>
+                <div class="typewriter-paper">
+                    <div class="love-note" id="typewriter-output"></div>
                 </div>
                 <button class="interactive-btn" id="love-btn">Send Love 💖</button>
+                 </div>
             </section>
+       
             
             <section id="photos">
                 <h2>Photo Gallery</h2>
@@ -283,6 +385,105 @@
             <div class="modal-caption" id="modalCaption"></div>
         </div>
     </div>
+
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loveNote = [
+                "On your special day, I want you to know how incredibly blessed I am to have you in my life.",
+                "Your smile lights up my world, your laughter is my favorite melody, and your love is the greatest gift I've ever received.",
+                "Thank you for being you - kind, beautiful, and wonderfully unique. I look forward to celebrating many more birthdays with you!",
+                "With all my love,",
+                "Nkateko"
+            ];
+            
+            const outputElement = document.getElementById('typewriter-output');
+            const loveBtn = document.getElementById('love-btn');
+            let currentLine = 0;
+            let currentText = '';
+            let isDeleting = false;
+            let isWaiting = false;
+            
+            // Typewriter effect function
+            function typeWriter() {
+                if (currentLine >= loveNote.length) {
+                    // Add blinking cursor at the end
+                    outputElement.innerHTML += '<span class="typewriter-cursor"></span>';
+                    loveBtn.disabled = false;
+                    return;
+                }
+                
+                const currentLineText = loveNote[currentLine];
+                
+                if (!isDeleting && !isWaiting) {
+                    // Typing forward
+                    currentText = currentLineText.substring(0, currentText.length + 1);
+                } else if (isDeleting && !isWaiting) {
+                    // Deleting
+                    currentText = currentLineText.substring(0, currentText.length - 1);
+                }
+                
+                // Display the current text with cursor
+                if (currentLine === loveNote.length - 1) {
+                    // Last line (signature) gets special styling
+                    outputElement.innerHTML = formatLines() + 
+                        '<div class="signature">' + currentText + 
+                        '<span class="typewriter-cursor"></span></div>';
+                } else {
+                    outputElement.innerHTML = formatLines() + currentText + 
+                        '<span class="typewriter-cursor"></span>';
+                }
+                
+                // Typing speed
+                let typeSpeed = 60;
+                
+                if (isDeleting) {
+                    typeSpeed /= 2; // Delete faster
+                }
+                
+                // Check if current line is complete
+                if (!isDeleting && currentText === currentLineText) {
+                    isWaiting = true;
+                    typeSpeed = 1000; // Pause at end of line
+                    isDeleting = true;
+                } else if (isDeleting && currentText === '') {
+                    isDeleting = false;
+                    currentLine++;
+                    isWaiting = true;
+                    typeSpeed = 500; // Pause before starting new line
+                } else if (isWaiting) {
+                    isWaiting = false;
+                }
+                
+                setTimeout(typeWriter, typeSpeed);
+            }
+            
+            // Format already completed lines
+            function formatLines() {
+                let formattedText = '';
+                for (let i = 0; i < currentLine; i++) {
+                    formattedText += '<div class="typewriter-line">' + loveNote[i] + '</div>';
+                }
+                return formattedText;
+            }
+            
+            // Start typewriter effect
+            typeWriter();
+            
+            // Button click event
+            loveBtn.addEventListener('click', function() {
+                // Reset animation
+                currentLine = 0;
+                currentText = '';
+                isDeleting = false;
+                isWaiting = false;
+                outputElement.innerHTML = '';
+                loveBtn.disabled = true;
+                
+                // Restart typewriter effect
+                typeWriter();
+            });
+        });
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script src="js/countdown.js"></script>
