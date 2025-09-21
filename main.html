@@ -257,6 +257,56 @@
     
     <!-- Falling hearts background -->
     <div id="hearts-container"></div>
+
+        <!-- Gift popup - MOVED TO TOP LEVEL -->
+    <div class="gift-popup" id="gift-popup">
+        <div class="gift-popup-content">
+            <div class="gift-popup-header">
+                <h3>A Special Love Letter For You</h3>
+                <span class="gift-popup-close" id="gift-popup-close">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+            <div class="gift-popup-body">
+                <div class="gift-letter-container">
+                    <p class="gift-love-letter" id="gift-love-letter">
+My Dearest Olwethu,
+
+On this special day, I want to express what my heart feels but words often fail to capture.
+
+From the moment you came into my life, everything changed. Your smile became my sunshine, your laughter my favorite melody, and your love the very air I breathe.
+
+You are the most amazing person I've ever known - kind, beautiful, intelligent, and with a heart so pure it inspires me to be a better man every single day.
+
+Thank you for:
+- The way you look at me like I'm the only person in the room
+- Your patience when I'm being difficult
+- Your support in all my dreams and ambitions
+- The little notes you leave me when I least expect them
+- Your incredible strength that amazes me constantly
+
+I cherish every moment we've shared - from our lazy Sundays to our adventurous trips, from our deep conversations to our comfortable silences.
+
+Today, on your birthday, I want to promise you that I will spend every day making you as happy as you've made me. You deserve the world, and I will move mountains to give it to you.
+
+Happy birthday to the woman of my dreams, my best friend, my everything. May this year bring you as much joy as you've brought into my life.
+
+With all my love, now and forever,
+Nkateko
+                    </p>
+                </div>
+            </div>
+            <div class="gift-popup-audio">
+                <div class="audio-player">
+                    <audio controls id="love-letter-audio">
+                        <source src="path/to/your/recording.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p class="audio-caption">Listen to me read this letter to you</p>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <div class="container">
         <header>
@@ -421,61 +471,13 @@
             </section>
             
             <section id="gift-section">
-                <!-- New gift popup element -->
-                 <h2>Your Virtual Gift</h2>
+                             <!-- Gift box remains here, but popup has been moved -->
+                <h2>Your Virtual Gift</h2>
                 <div style="padding: 2rem;"></div>
                 <div class="gift-box" id="gift-box">
                     <div class="lid"></div>
                     <div class="box"></div>
                 </div>
-    <div class="gift-popup" id="gift-popup">
-        <div class="gift-popup-content">
-            <div class="gift-popup-header">
-                <h3>A Special Love Letter For You</h3>
-                <span class="gift-popup-close" id="gift-popup-close">
-                    <i class="fas fa-times"></i>
-                </span>
-            </div>
-            <div class="gift-popup-body">
-                <div class="gift-letter-container">
-                    <p class="gift-love-letter" id="gift-love-letter">
-My Dearest Olwethu,
-
-On this special day, I want to express what my heart feels but words often fail to capture.
-
-From the moment you came into my life, everything changed. Your smile became my sunshine, your laughter my favorite melody, and your love the very air I breathe.
-
-You are the most amazing person I've ever known - kind, beautiful, intelligent, and with a heart so pure it inspires me to be a better man every single day.
-
-Thank you for:
-- The way you look at me like I'm the only person in the room
-- Your patience when I'm being difficult
-- Your support in all my dreams and ambitions
-- The little notes you leave me when I least expect them
-- Your incredible strength that amazes me constantly
-
-I cherish every moment we've shared - from our lazy Sundays to our adventurous trips, from our deep conversations to our comfortable silences.
-
-Today, on your birthday, I want to promise you that I will spend every day making you as happy as you've made me. You deserve the world, and I will move mountains to give it to you.
-
-Happy birthday to the woman of my dreams, my best friend, my everything. May this year bring you as much joy as you've brought into my life.
-
-With all my love, now and forever,
-Nkateko
-                    </p>
-                </div>
-            </div>
-            <div class="gift-popup-audio">
-                <div class="audio-player">
-                    <audio controls id="love-letter-audio">
-                        <source src="path/to/your/recording.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <p class="audio-caption">Listen to me read this letter to you</p>
-                </div>
-            </div>
-        </div>
-    </div>
             </section>
 
             <section id="memories">
