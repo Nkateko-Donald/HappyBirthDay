@@ -107,6 +107,148 @@
             margin-top: 20px;
             color: #d4af37;
         }
+
+        /* New styles for the gift popup */
+        .gift-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .gift-popup.active {
+            display: flex;
+        }
+        
+        .gift-popup-content {
+            background: #fff;
+            border: 3px solid #d4af37;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gift-popup-header {
+            background: linear-gradient(45deg, #d4af37, #f5d76e);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #5a3a2b;
+            font-weight: bold;
+        }
+        
+        .gift-popup-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .gift-popup-close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .gift-popup-body {
+            padding: 0;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+        
+        .gift-letter-container {
+            background: #fdf6e3;
+            padding: 25px;
+            max-height: 50vh;
+            overflow-y: auto;
+            border: 1px solid #e8d8c0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .gift-letter-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 40px;
+            right: 0;
+            height: 100%;
+            background: repeating-linear-gradient(
+                transparent,
+                transparent 23px,
+                #e8d8c0 23px,
+                #e8d8c0 24px
+            );
+            pointer-events: none;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .gift-love-letter {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            line-height: 24px;
+            color: #5a3a2b;
+            white-space: pre-wrap;
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+        
+        .gift-popup-audio {
+            padding: 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #e8d8c0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .audio-player {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .audio-player audio {
+            width: 100%;
+        }
+        
+        .audio-caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #5a3a2b;
+            font-size: 0.9rem;
+        }
+        
+        /* Custom scrollbar for the letter */
+        .gift-letter-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .gift-letter-container::-webkit-scrollbar-track {
+            background: #f1e1c6;
+            border-radius: 4px;
+        }
+        
+        .gift-letter-container::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+        
+        .gift-letter-container::-webkit-scrollbar-thumb:hover {
+            background: #c19b2e;
+        }
     </style>
 </head>
 <body>
@@ -279,15 +421,61 @@
             </section>
             
             <section id="gift-section">
-                <h2>Your Virtual Gift</h2>
+                <!-- New gift popup element -->
+                 <h2>Your Virtual Gift</h2>
                 <div style="padding: 2rem;"></div>
                 <div class="gift-box" id="gift-box">
                     <div class="lid"></div>
                     <div class="box"></div>
                 </div>
-                <div class="gift-message" id="gift-message">
-                    You're the best thing that ever happened to me! Happy Birthday! 🎁
+    <div class="gift-popup" id="gift-popup">
+        <div class="gift-popup-content">
+            <div class="gift-popup-header">
+                <h3>A Special Love Letter For You</h3>
+                <span class="gift-popup-close" id="gift-popup-close">
+                    <i class="fas fa-times"></i>
+                </span>
+            </div>
+            <div class="gift-popup-body">
+                <div class="gift-letter-container">
+                    <p class="gift-love-letter" id="gift-love-letter">
+My Dearest Olwethu,
+
+On this special day, I want to express what my heart feels but words often fail to capture.
+
+From the moment you came into my life, everything changed. Your smile became my sunshine, your laughter my favorite melody, and your love the very air I breathe.
+
+You are the most amazing person I've ever known - kind, beautiful, intelligent, and with a heart so pure it inspires me to be a better man every single day.
+
+Thank you for:
+- The way you look at me like I'm the only person in the room
+- Your patience when I'm being difficult
+- Your support in all my dreams and ambitions
+- The little notes you leave me when I least expect them
+- Your incredible strength that amazes me constantly
+
+I cherish every moment we've shared - from our lazy Sundays to our adventurous trips, from our deep conversations to our comfortable silences.
+
+Today, on your birthday, I want to promise you that I will spend every day making you as happy as you've made me. You deserve the world, and I will move mountains to give it to you.
+
+Happy birthday to the woman of my dreams, my best friend, my everything. May this year bring you as much joy as you've brought into my life.
+
+With all my love, now and forever,
+Nkateko
+                    </p>
                 </div>
+            </div>
+            <div class="gift-popup-audio">
+                <div class="audio-player">
+                    <audio controls id="love-letter-audio">
+                        <source src="path/to/your/recording.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p class="audio-caption">Listen to me read this letter to you</p>
+                </div>
+            </div>
+        </div>
+    </div>
             </section>
 
             <section id="memories">
@@ -386,6 +574,62 @@
             <div class="modal-caption" id="modalCaption"></div>
         </div>
     </div>
+
+    <script>
+        // Add this to your existing JavaScript
+        
+        // Gift popup functionality
+        const giftPopup = document.getElementById('gift-popup');
+        const giftPopupClose = document.getElementById('gift-popup-close');
+        const loveLetterAudio = document.getElementById('love-letter-audio');
+        const giftBox = document.getElementById('gift-box');
+        
+        // Open gift popup when gift box is clicked
+        if (giftBox) {
+            giftBox.addEventListener('click', function() {
+                // Open the popup
+                giftPopup.classList.add('active');
+                
+                // Add the open class to the gift box for animation
+                this.classList.add('open');
+                
+                // Start playing the audio automatically (optional)
+                // loveLetterAudio.play().catch(e => {
+                //     console.log("Autoplay prevented: ", e);
+                // });
+                
+                // Create confetti
+                createConfetti();
+            });
+        }
+        
+        // Close gift popup
+        if (giftPopupClose) {
+            giftPopupClose.addEventListener('click', function() {
+                giftPopup.classList.remove('active');
+                loveLetterAudio.pause();
+                loveLetterAudio.currentTime = 0;
+            });
+        }
+        
+        // Close popup when clicking outside content
+        giftPopup.addEventListener('click', function(e) {
+            if (e.target === giftPopup) {
+                giftPopup.classList.remove('active');
+                loveLetterAudio.pause();
+                loveLetterAudio.currentTime = 0;
+            }
+        });
+        
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && giftPopup.classList.contains('active')) {
+                giftPopup.classList.remove('active');
+                loveLetterAudio.pause();
+                loveLetterAudio.currentTime = 0;
+            }
+        });
+    </script>
 
      <script>
         document.addEventListener('DOMContentLoaded', function() {
