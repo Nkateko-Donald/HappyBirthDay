@@ -1054,43 +1054,91 @@ if (giftBox) {
     });
     
     // Music player functionality
-    const songs = [
-        {
-            title: "I can't believe",
-            src: "music/I can't believe I get to call you mine (1).mp3"
-        },
-        {
-            title: "Noma",
-            src: "Kaylow - Noma.mp3"
-        },
-        {
-            title: "Spoonky",
-            src: "music/Spoonky.mp3"
-        }
-    ];
+    // Music player functionality
+const songs = [
+    {
+        title: "I can't believe",
+        src: "music/I can't believe I get to call you mine (1).mp3"
+    },
+    {
+        title: "Noma",
+        src: "music/Kaylow - Noma.mp3" // Fixed path - added music folder
+    },
+    {
+        title: "Spoonky",
+        src: "music/Spoonky.mp3"
+    }
+];
+
+let currentSong = 0;
+const audio = new Audio();
+
+// Function to load and play a song
+function loadSong(songIndex) {
+    currentSong = songIndex;
+    audio.src = songs[currentSong].src;
+    audio.load();
     
-    let currentSong = 0;
-    const audio = new Audio();
+    // Update UI
+    document.querySelector('.music-info').textContent = songs[currentSong].title;
+    document.getElementById('play-btn').innerHTML = '<i class="fas fa-pause"></i>';
     
-    document.getElementById('play-btn').addEventListener('click', function() {
-        if (audio.paused) {
-            audio.src = songs[currentSong].src;
+    // Play the song
+    audio.play().catch(error => {
+        console.log("Autoplay prevented:", error);
+        // If autoplay is blocked, change button back to play
+        document.getElementById('play-btn').innerHTML = '<i class="fas fa-play"></i>';
+    });
+}
+
+// Play/Pause button
+document.getElementById('play-btn').addEventListener('click', function() {
+    if (audio.paused) {
+        // If audio source is not set (first time), load current song
+        if (!audio.src) {
+            loadSong(currentSong);
+        } else {
             audio.play();
             this.innerHTML = '<i class="fas fa-pause"></i>';
-            document.querySelector('.music-info').textContent = songs[currentSong].title;
-        } else {
-            audio.pause();
-            this.innerHTML = '<i class="fas fa-play"></i>';
         }
-    });
-    
-    document.getElementById('next-btn').addEventListener('click', function() {
-        currentSong = (currentSong + 1) % songs.length;
-        audio.src = songs[currentSong].src;
-        audio.play();
-        document.getElementById('play-btn').innerHTML = '<i class="fas fa-pause"></i>';
-        document.querySelector('.music-info').textContent = songs[currentSong].title;
-    });
+    } else {
+        audio.pause();
+        this.innerHTML = '<i class="fas fa-play"></i>';
+    }
+});
+
+// Next button - FIXED
+document.getElementById('next-btn').addEventListener('click', function() {
+    currentSong = (currentSong + 1) % songs.length;
+    loadSong(currentSong);
+});
+
+// Previous button functionality (optional - if you want to add it later)
+function previousSong() {
+    currentSong = (currentSong - 1 + songs.length) % songs.length;
+    loadSong(currentSong);
+}
+
+// Auto-play first song when page loads (with error handling)
+window.addEventListener('load', function() {
+    // Small delay to ensure everything is loaded
+    setTimeout(() => {
+        loadSong(0);
+    }, 1000);
+});
+
+// Auto-play next song when current song ends
+audio.addEventListener('ended', function() {
+    currentSong = (currentSong + 1) % songs.length;
+    loadSong(currentSong);
+});
+
+// Handle audio errors
+audio.addEventListener('error', function(e) {
+    console.error("Audio error:", e);
+    document.querySelector('.music-info').textContent = "Error loading song";
+    document.getElementById('play-btn').innerHTML = '<i class="fas fa-play"></i>';
+});
     
     // Image error handling
     window.handleImageError = function(img) {
