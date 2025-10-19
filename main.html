@@ -333,7 +333,7 @@ Nkateko
                 <h2>Photo Gallery</h2>
                 <div class="media-gallery" id="interactive-gallery">
                     <!-- Photo items -->
-                    <div class="media-item" data-type="image" data-src="images/IMG-20231229-WA0011.jpg" data-caption="December holidays">
+                    <div class="media-item" data-type="image" data-src="images/IMG-20231229-WA0011.jpg" data-caption="1st Pic you ever sent me">
                         <img src="images/IMG-20231229-WA0011.jpg" alt="Memory 1" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-image"></i>
@@ -365,7 +365,7 @@ Nkateko
                         </div>
                     </div>
                     
-                    <div class="media-item" data-type="image" data-src="images/IMG-20241226-WA0011.jpg" data-caption="1st Pic you ever sent me">
+                    <div class="media-item" data-type="image" data-src="images/IMG-20241226-WA0011.jpg" data-caption="December holidays">
                         <img src="images/IMG-20241226-WA0011.jpg" alt="Memory 5" onerror="handleImageError(this)">
                         <div class="media-type-indicator">
                             <i class="fas fa-image"></i>
@@ -546,7 +546,7 @@ Nkateko
             <input type="text" class="decoder-input" placeholder="Enter decoded message">
             <button class="interactive-btn" id="decode-btn">Decode</button>
             <div class="decoder-message" id="decoder-message">
-                I love that you are petite and tall and you should never doubt it. 💖
+                I love that you are petite and tall and you should never doubt it. You Got it Mammie💖
             </div>
         </div>
     </section>
@@ -1049,12 +1049,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Music player functionality
     const songs = [
         {
-            title: "Our Song",
-            src: "music/Spoonky.mp3"
+            title: "I can't believe",
+            src: "music/I can't believe I get to call you mine (1).mp3"
         },
         {
-            title: "Special Memory",
-            src: "music/song2.mp3"
+            title: "Noma",
+            src: "Kaylow - Noma.mp3"
+        },
+        {
+            title: "Spoonky",
+            src: "music/Spoonky.mp3"
         }
     ];
     
@@ -1131,14 +1135,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 modal.classList.add('active');
 
                  // NEW: Scroll to top of modal to ensure content is visible
-        modal.scrollTop = 0;
-        
-// Scroll to the middle of the page 800
-window.scrollTo({
-    top: (document.documentElement.scrollHeight / 2) - 800,
-    behavior: 'smooth' // optional for smooth scrolling
-});
-                
+            modal.scrollTop = 0;
+            
+            // Scroll to the middle of the page 800
+            window.scrollTo({
+                top: (document.documentElement.scrollHeight / 2) - 800,
+                behavior: 'smooth' // optional for smooth scrolling
+            });
+                        
                 // Prevent body scrolling
                 //document.body.style.overflow = 'hidden';
             }
