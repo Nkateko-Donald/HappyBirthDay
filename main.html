@@ -1029,13 +1029,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Gift box functionality
-    const giftBox = document.getElementById('gift-box');
-    if (giftBox) {
-        giftBox.addEventListener('click', function() {
-            this.classList.add('open');
-            createConfetti();
+const giftBox = document.getElementById('gift-box');
+if (giftBox) {
+    giftBox.addEventListener('click', function() {
+        this.classList.add('open');
+        createConfetti();
+        
+        // Scroll to the center of the page
+        const middleOfPage = document.documentElement.scrollHeight / 2 - window.innerHeight / 2;
+        window.scrollTo({
+            top: middleOfPage,
+            behavior: 'smooth'
         });
-    }
+    });
+}
     
     // Cursor effect
     document.addEventListener('mousemove', function(e) {
